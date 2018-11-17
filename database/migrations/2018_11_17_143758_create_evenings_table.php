@@ -18,6 +18,8 @@ class CreateEveningsTable extends Migration
             $table->date('date');
             $table->string('open');
             $table->string('close');
+            $table->string('charge_time');
+            $table->string('charge_cost');
             $table->unsignedInteger('venue_id');
             $table->timestamps();
         });

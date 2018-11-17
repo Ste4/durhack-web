@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evening extends Model
 {
+    protected $casts = [
+        'charge_cost' => 'integer',
+    ];
+
     public function venue()
     {
     	return $this->belongsTo('App\Venue');

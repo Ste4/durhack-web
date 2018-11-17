@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return response()->json([
-    	'name' => 'Klute',
-    	'count' => 4,
-    ]);
-});
+Route::get('/', 'VenueController@index');
 
+Route::get('/all', 'VenueController@all');
+
+Route::get('/count/{venue}', 'VenueController@count');
+
+Route::post('/entry/{venue}', 'VenueController@entry');
+Route::post('/leave/{venue}', 'VenueController@leave');
+
+Route::post('/venue', 'VenueController@select');
+Route::get('/venue/{venue}', 'VenueController@display');
 
 Route::get('/{venue}', 'VenueController@show');
+
+
+

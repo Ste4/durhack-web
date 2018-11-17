@@ -16,9 +16,7 @@ class VenueController extends Controller
 
     public function show(Venue $venue)
     {
-    	//dd($venue, $venue->evenings);
     	return response()->json($venue);
-    	
     }
 
     public function all()

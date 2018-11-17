@@ -10,4 +10,9 @@ class Venue extends Model
     {
     	return $this->hasMany('App\Evening');
     }
+
+    public function entries()
+    {
+    	return $this->hasManyThrough('App\Entry', 'App\Evening');
+    }
 }

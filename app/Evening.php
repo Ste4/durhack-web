@@ -10,4 +10,9 @@ class Evening extends Model
     {
     	return $this->belongsTo('App\Venue');
     }
+
+    public function entries()
+    {
+    	return $this->hasMany('App\Entry');
+    }
 }

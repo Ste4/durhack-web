@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json([
+    	'name' => 'Klute',
+    	'count' => 4,
+    ]);
 });
+
+
+Route::get('/{venue}', 'VenueController@show');

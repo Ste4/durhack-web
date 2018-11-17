@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Nite Life Venue</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Select A Venue</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Venue Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Event</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<p></p>
+
+<div class="container-fluid">
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-header"><h2>Select a Different Venue</h2></div>
+            <div class="card-body">
+                <form>
+                    <select name="cars" class="custom-select">
+                        <option selected>Custom Select Menu</option>
+                        <option value="Klute">Klute</option>
+                        <option value="Jimmy Allens">Jimmy Allens</option>
+                        <option value="Bishop's Mill">Bishop's Mill</option>
+                    </select>
+                </form>
+            </div>
+            <div class="card-footer"><button type="button" class="btn btn-info">Select Venue</button> </div>
+        </div>
+        <p></p>
+
+        <div class="card">
+            <div class="card-header"><h2>Venue Overview</h2></div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Venue Name</th>
+                        <th>Number of Events</th>
+                        <th>Total Visitors</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Klute</td>
+                        <td>2</td>
+                        <td>352</td>
+                    </tr>
+                    <tr>
+                        <td>Jimmy Allens</td>
+                        <td>4</td>
+                        <td>1287</td>
+                    </tr>
+                    <tr>
+                        <td>Bishop's Mill</td>
+                        <td>1</td>
+                        <td>725</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p></p>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -61,6 +61,12 @@ class DatabaseSeeder extends Seeder
             'venue_id' => $jimmys->id,
         ]);
 
+        for ($i=0; $i < 200; $i++) { 
+            $evj = App\Entry::create([
+                'evening_id' => $evj1->id,
+            ]);
+        }
+
         //Create the evenings for lloyds
         $evl1 = factory(App\Evening::class)->create([
             'venue_id' => $lloyds->id,

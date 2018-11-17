@@ -9,6 +9,6 @@ class VenueController extends Controller
 {
     public function show(Venue $venue)
     {
-    	dd($venue);
+    	dd($venue, $venue->evenings);
     }
 }

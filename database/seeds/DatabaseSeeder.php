@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Venue;
+use App\Evening;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,5 +20,15 @@ class DatabaseSeeder extends Seeder
         	'latitude' => 54.7759970,
         	'longitude' => -1.5740014,
         ]);
+
+        //Create this evening for klute
+        $kluteEvening = Evening::make([
+            'date' => '17/11/2018',
+            'open' => '10:30',
+            'close' => '02:00',
+        ]);
+        $kluteEvening->venue()->associate($klute);
+        $kluteEvening->save();
+
     }
 }

@@ -17,7 +17,7 @@ class CreateVenuesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('capacity');
-            $table->integer('place_id');
+            $table->integer('place_id')->nullable();
             $table->float('latitude', 2, 7);
             $table->float('longitude', 3, 7);
             $table->string('logo')->nullable();

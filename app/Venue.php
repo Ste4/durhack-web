@@ -15,4 +15,9 @@ class Venue extends Model
     {
     	return $this->hasManyThrough('App\Entry', 'App\Evening');
     }
+
+    public function leaves()
+    {
+    	return $this->hasManyThrough('App\Leave', 'App\Evening');
+    }
 }

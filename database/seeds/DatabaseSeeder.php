@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Venue;
 use App\Evening;
 use App\Entry;
+use App\Leave;
 
 class DatabaseSeeder extends Seeder
 {
@@ -39,6 +40,11 @@ class DatabaseSeeder extends Seeder
         $kluteEntry2 = Entry::make();
         $kluteEntry2->evening()->associate($kluteEvening);
         $kluteEntry2->save();
+
+        //Create klute leave
+        $kluteLeave = Leave::make();
+        $kluteLeave->evening()->associate($kluteEvening);
+        $kluteLeave->save();
 
     }
 }

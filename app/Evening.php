@@ -15,4 +15,9 @@ class Evening extends Model
     {
     	return $this->hasMany('App\Entry');
     }
+
+    public function leaves()
+    {
+    	return $this->hasMany('App\Leave');
+    }
 }

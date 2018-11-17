@@ -18,5 +18,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/all', 'VenueController@all');
 
 Route::get('/{venue}', 'VenueController@show');
+
+
+
+Route::post('/entry/{venue}', 'VenueController@entry');
+
+Route::post('/leave/{venue}', 'VenueController@leave');

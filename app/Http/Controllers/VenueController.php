@@ -9,6 +9,11 @@ use App\Leave;
 
 class VenueController extends Controller
 {
+    public function index()
+    {
+        return view('welcome');
+    }
+
     public function show(Venue $venue)
     {
     	dd($venue, $venue->evenings);
@@ -37,5 +42,15 @@ class VenueController extends Controller
     	$leave = new Leave;
     	$leave->evening()->associate($evening);
     	$leave->save();
+    }
+
+    public function count(Venue $venue)
+    {
+        $entries = count($venue->evenings[0]->entries);
+        $leaves = count($venue->evenings[0]->leaves);
+
+        $current = $entries - $leaves;
+
+        return $current;
     }
 }

@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return response()->json([
-    	'name' => 'Klute',
-    	'count' => 4,
-    ]);
-});
+Route::get('/', 'VenueController@index');
 
 Route::get('/all', 'VenueController@all');
+
+Route::get('/count/{venue}', 'VenueController@count');
 
 Route::get('/{venue}', 'VenueController@show');
 

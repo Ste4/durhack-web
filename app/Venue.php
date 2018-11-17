@@ -77,7 +77,7 @@ class Venue extends Model
 
     public function getImageAttribute()
     {
-        $img = Image::make("Klute2.png");
+        $img = Image::make("klute.jpg");
         $img->resize(500, 500);
         $encoded = (string)$img->encode('data-url');
 

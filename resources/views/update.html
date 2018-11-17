@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Nite Life</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="updateScript.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Select A Venue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="venue.html">Venue Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Event</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-fluid">
+                <form class="form-inline">
+                    <select name="venue" class="custom-select" required>
+                        <option value="Klute">Klute</option>
+                        <option value="Jimmy Allens">Jimmy Allens</option>
+                        <option value="Bishop's Mill">Bishop's Mill</option>
+                    </select>
+                    <p>  </p>
+                    <button type="submit" class="btn btn-info" formaction="venue.html">Select Venue</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <p></p>
+
+    <div class="container-fluid">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-header"><h2>Select a Venue</h2></div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="clubName">Name</label>
+                            <input class="form-control" id="clubName" type="text" placeholder="Name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="capacity">Capacity</label>
+                            <input class="form-control" id="capacity" type="text" placeholder="Enter Capacity", maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Ticket Price</label>
+                            <input class="form-control" id="price" type="text" placeholder="Enter Ticket Price", maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="clubImg">Upload Logo</label>
+                            <input type="file" class="form-control-file" id="clubImg">
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -26,7 +26,6 @@ $(document).ready(function(){
     }
 
     var j
-
     for (i in times){
         for(j=0; j<4; j++){
             $("#openTime").append($('<option></option>').val(times[i] + j/4).html(numberToTime(times[i] + j/4)));

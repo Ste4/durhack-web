@@ -27,7 +27,7 @@ $(document).ready(function(){
             hr = '0' + hr;
         }
         return hr + ':' + min;
-    }
+    };
 
     function createCalendarEntry(event){
         dateIcon = '<div class="row row-striped"><div class="col-2 text-right"><h1 class="display-4"><span class="badge badge-secondary">'
@@ -37,7 +37,7 @@ $(document).ready(function(){
                 + '</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + numberToTime(event['openTime']) + ' - ' + numberToTime(event['closeTime']) + '</li></ul>';
         description = '<p>' + event['description'] + '</p></div></div></div>';
         return dateIcon + title + list + description;
-    }
+    };
 
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),

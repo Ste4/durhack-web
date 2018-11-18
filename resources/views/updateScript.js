@@ -7,7 +7,7 @@ $(document).ready(function(){
     let monthLookup = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     let weekLookup = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    let events = {'name':'Test Event', 'year':2018, 'month':11, 'day':18, 'openTime':20, 'closeTime':3, 'description':'Test event lorem ipsum'};
+    let events = {'name':'Test Event', 'year':2018, 'month':11, 'day':18, 'openTime':20, 'closeTime':3, 'description':'Test event lorem ipsum', 'price':3.23};
 
     let club = getUrlParameter('club');
 
@@ -31,12 +31,24 @@ $(document).ready(function(){
         return hr + ':' + min;
     };
 
+    function numberToPrice(num){
+        let s = "" + num;
+        if (s.length == 1){
+            return num + ".00";
+        }
+        if (s.length == 3){
+            return num + "0";
+        }
+        return num;
+    };
+
     function createCalendarEntry(event){
         dateIcon = '<div class="row row-striped"><div class="col-2 text-right"><h1 class="display-4"><span class="badge badge-secondary">'
                     + event['day'] + '</span></h1><h2>' + monthLookup[event['month']-1] + '</h2></div>';
         title = '<div class="col-10"><h3 class="text-uppercase"><strong>' + event['name'] + '</strong></h3><ul class="list-inline">';
         list = '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> ' + weekLookup[new Date(event['year'], event['month']-1, event['day']).getDay()]
-                + '</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + numberToTime(event['openTime']) + ' - ' + numberToTime(event['closeTime']) + '</li></ul>';
+                + '</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + numberToTime(event['openTime']) + ' - ' + numberToTime(event['closeTime'])
+                + '</li><li class="list-inline-item"><i class="fa fa-gbp" aria-hidden="true"></i> ' + numberToPrice(event['price']) + '</li></ul>';
         description = '<p>' + event['description'] + '</p></div></div></div>';
         return dateIcon + title + list + description;
     };

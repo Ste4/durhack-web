@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll="false">
+
+  <!--<ion-segment color="primary">-->
+    <!--<ion-segment-button value="friends">-->
+      <!--Friends-->
+    <!--</ion-segment-button>-->
+    <!--<ion-segment-button value="enemies">-->
+      <!--Enemies-->
+    <!--</ion-segment-button>-->
+  <!--</ion-segment>-->
+
+  <div id="map_canvas"></div>
+
+  <ion-card class="clubcard" color="dark" *ngIf="selectedClub">
+
+    <ion-card-content>
+
+      <h2>{{selectedClub.name}}</h2>
+      <p>{{clubProvider.getChargeString(selectedClub)}}</p>
+
+      <ion-range [max]="selectedClub.capacity" [(ngModel)]="selectedClub.count" disabled="true">
+        <ion-icon range-left small name="people"></ion-icon>
+        <ion-icon range-right name="people"></ion-icon>
+      </ion-range>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

@@ -5,6 +5,10 @@
     	<li class="navbar-item">
     		<a class="nav-link" href="/admin/new">Create Event</a>
     	</li>
+
+    	<li class="navbar-item">
+    		<a class="nav-link" href="/admin/update">Update Venue</a>
+    	</li>
     </ul>
     
 </nav>

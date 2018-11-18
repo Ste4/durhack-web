@@ -24,6 +24,7 @@ Route::post('/venue', 'VenueController@select');
 Route::get('/venue/{venue}', 'VenueController@display');
 
 Route::get('/admin/new', 'VenueController@new');
+Route::get('/admin/update', 'VenueController@update');
 
 Route::get('/{venue}', 'VenueController@show');
 

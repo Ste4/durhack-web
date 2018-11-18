@@ -10490,7 +10490,8 @@ body {
   display: none;
 }
 
-#newEventContainer {
+#newEventContainer,
+#updateVenueContainer {
   color: #0e1a33;
 }
 

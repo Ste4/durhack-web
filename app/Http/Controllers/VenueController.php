@@ -156,6 +156,11 @@ class VenueController extends Controller
         return view('newEvent');
     }
 
+    public function update()
+    {
+        return view('updateVenue');
+    }
+
     private function rand_color() {
         $rgbColor = array();
  

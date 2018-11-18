@@ -9,6 +9,8 @@ $(document).ready(function(){
 
     let events = {'name':'Test Event', 'year':2018, 'month':11, 'day':18, 'openTime':20, 'closeTime':3, 'description':'Test event lorem ipsum'};
 
+    let club = getUrlParameter('club');
+
     for (var i in times){
         for(j=0; j<4; j++){
             $("#openTime").append($('<option></option>').val(times[i] + j/4).html(numberToTime(times[i] + j/4)));
@@ -53,8 +55,6 @@ $(document).ready(function(){
             }
         }
     };
-
-    let club = getUrlParameter('club');
 
     $("#cal").append(createCalendarEntry(events));
 

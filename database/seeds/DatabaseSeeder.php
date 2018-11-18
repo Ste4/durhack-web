@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         //Create Jimmys
         $jimmys = Venue::create([
-            'name' => 'Jimmy Allens',
+            'name' => 'Jimmys',
             'capacity' => 100,
             'latitude' => 54.776086,
             'longitude' => -1.5740605,
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         //Create Lloyds
         $lloyds = Venue::create([
-            'name' => 'The Bishops\' Mill',
+            'name' => 'Lloyds',
             'capacity' => 100,
             'latitude' => 54.778239,
             'longitude' => -1.575739,

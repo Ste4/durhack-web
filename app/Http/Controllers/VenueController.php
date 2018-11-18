@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Venue;
+use App\Evening;
 use App\Entry;
 use App\Leave;
 use Carbon\Carbon;
@@ -156,9 +157,27 @@ class VenueController extends Controller
         return view('newEvent');
     }
 
+    public function postNew(Request $request)
+    {
+        $venue = Venue::first();
+
+        $event = Evening::make([
+            'date' => $request->day.'/'.$request->month.'/'.$request->year,
+            'open' => $request->openTime,
+            'close' => $request->closeTime,
+            'charge_time' => $request->chargeTime,
+            'charge_cost' => $request->price,
+        ]);
+        $event->venue()->associate($venue);
+        $event->save();
+        
+        return redirect('/admin/new');
+    }
+
     public function update()
     {
-        return view('updateVenue');
+        $evenings = Evening::take(3)->get()->toArray();
+        return view('updateVenue')->with('events', $evenings);
     }
 
     private function rand_color() {

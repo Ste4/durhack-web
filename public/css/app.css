@@ -10483,9 +10483,14 @@ body {
 
 .navbar {
   color: black;
+  margin-bottom: 20px;
 }
 
 .chart-hour {
   display: none;
+}
+
+#newEventContainer {
+  color: #0e1a33;
 }
 

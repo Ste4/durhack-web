@@ -23,6 +23,11 @@ Route::post('/leave/{venue}', 'VenueController@leave');
 Route::post('/venue', 'VenueController@select');
 Route::get('/venue/{venue}', 'VenueController@display');
 
+Route::get('/admin/new', 'VenueController@new');
+Route::post('/admin/new', 'VenueController@postNew');
+
+Route::get('/admin/update', 'VenueController@update');
+
 Route::get('/{venue}', 'VenueController@show');
 
 

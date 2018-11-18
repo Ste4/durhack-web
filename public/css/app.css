@@ -10466,3 +10466,32 @@ a.text-dark:focus {
   }
 }
 
+body {
+  color: white;
+  background-color: #0e1a33;
+}
+
+.card-box {
+  margin: 5px;
+  padding: 20px;
+  background-color: #162951;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+.navbar {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.chart-hour {
+  display: none;
+}
+
+#newEventContainer,
+#updateVenueContainer {
+  color: #0e1a33;
+}
+

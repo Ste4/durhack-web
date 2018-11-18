@@ -10,6 +10,8 @@ class Evening extends Model
         'charge_cost' => 'integer',
     ];
 
+    protected $fillable = ['date', 'open', 'close', 'charge_cost', 'charge_time'];
+
     public function venue()
     {
     	return $this->belongsTo('App\Venue');

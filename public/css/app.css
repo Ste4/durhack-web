@@ -10466,3 +10466,26 @@ a.text-dark:focus {
   }
 }
 
+body {
+  color: white;
+  background-color: #0e1a33;
+}
+
+.card-box {
+  margin: 5px;
+  padding: 20px;
+  background-color: #162951;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+.navbar {
+  color: black;
+}
+
+.chart-hour {
+  display: none;
+}
+

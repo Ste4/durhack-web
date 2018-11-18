@@ -5,56 +5,96 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h2>Select a Venue</h2>
-                <div>
-                    <form action="/venue">
-                        <select name="venue" class="custom-select" required>
-                            @foreach(App\Venue::all() as $venue)
-                                <option value={{$venue->id}}>{{$venue->name}}</option>
-                            @endforeach
-                        </select>
-                        <button type="submit" class="btn btn-info">Select Venue</button>
-                    </form>
+                
+                <div class="card-box">
+                    <h3>Current Most Popular</h3>
+                    <div>
+                        {!! $chartjs->render() !!}
+                    </div>
                 </div>
+
             </div>
             
             <div class="col">
-                <h2>Venue Overview</h2>
-                <div>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Venue Name</th>
-                            <th>Number of Events</th>
-                            <th>Total Visitors</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Klute</td>
-                            <td>2</td>
-                            <td>352</td>
-                        </tr>
-                        <tr>
-                            <td>Jimmy Allens</td>
-                            <td>4</td>
-                            <td>1287</td>
-                        </tr>
-                        <tr>
-                            <td>Bishop's Mill</td>
-                            <td>1</td>
-                            <td>725</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="row">
+                    <div class="col">
+                        <h2>Venue Overview</h2>
+                        <div>
+                            <table class="table table-striped">
+                                <thead>
+                                    
+                                    <tr>
+                                        <th>Venue Name</th>
+                                        <th>Footfall</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(App\Venue::all() as $venue)
+                                        <tr>
+                                            <td>{{$venue->name}}</td>
+                                            <td>{{$venue->count}}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card-box">
+                            <h3>Current Most Popular</h3>
+                            <div>
+                                {!! $lastHour->render() !!}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
-                <canvas id="myChart" width="400" height="400"></canvas>
+                <h3>Live Updates</h3>
+                    <div>
+                        
+                    </div>
+            </div>
+            <div class="col-6">
+                
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(function (){
+            $('.custom-select').on('change', function(){
+                let canvasId = '#'+$(this).val();
+
+                var ctx = document.getElementById('chartCanvas').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: ['Now', '-1H', '-2H', '-3H', '-4H', '-5H'],
+                        datasets: [{
+                            label: "My First dataset",
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: [0, 10, 5, 2, 20, 45],
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 @endsection

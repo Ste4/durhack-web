@@ -5,6 +5,7 @@ use App\Venue;
 use App\Evening;
 use App\Entry;
 use App\Leave;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class DatabaseSeeder extends Seeder
         //Create Klute
         $klute = Venue::create([
         	'name' => 'Klute',
-        	'capacity' => 400,
+        	'capacity' => 100,
         	'latitude' => 54.7759970,
         	'longitude' => -1.5740014,
         ]);
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
         //Create Jimmys
         $jimmys = Venue::create([
             'name' => 'Jimmy Allens',
-            'capacity' => 350,
+            'capacity' => 100,
             'latitude' => 54.776086,
             'longitude' => -1.5740605,
         ]);
@@ -34,7 +35,7 @@ class DatabaseSeeder extends Seeder
         //Create Lloyds
         $lloyds = Venue::create([
             'name' => 'The Bishops\' Mill',
-            'capacity' => 500,
+            'capacity' => 100,
             'latitude' => 54.778239,
             'longitude' => -1.575739,
         ]);
@@ -61,12 +62,6 @@ class DatabaseSeeder extends Seeder
             'venue_id' => $jimmys->id,
         ]);
 
-        for ($i=0; $i < 200; $i++) { 
-            $evj = App\Entry::create([
-                'evening_id' => $evj1->id,
-            ]);
-        }
-
         //Create the evenings for lloyds
         $evl1 = factory(App\Evening::class)->create([
             'venue_id' => $lloyds->id,
@@ -78,5 +73,25 @@ class DatabaseSeeder extends Seeder
             'venue_id' => $lloyds->id,
         ]);
 
+
+        //Create entries
+        for ($i=0; $i < 50; $i++) { 
+            $e = App\Entry::create([
+                'evening_id' => $evk1->id,
+                'created_at' => Carbon::now()->addHours(-mt_rand(0,4))->format('Y-m-d H:i:s'),
+            ]);
+        }
+        for ($i=0; $i < 70; $i++) { 
+            $e = App\Entry::create([
+                'evening_id' => $evj1->id,
+                'created_at' => Carbon::now()->addHours(-mt_rand(0,4))->format('Y-m-d H:i:s'),
+            ]);
+        }
+        for ($i=0; $i < 90; $i++) { 
+            $e = App\Entry::create([
+                'evening_id' => $evl1->id,
+                'created_at' => Carbon::now()->addHours(-mt_rand(0,4))->format('Y-m-d H:i:s'),
+            ]);
+        }
     }
 }

@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="updateScript.js"></script>
+
 </head>
 <body>
 
@@ -64,9 +65,17 @@
                             <input class="form-control" id="price" type="text" placeholder="Enter Ticket Price", maxlength="4">
                         </div>
                         <div class="form-group">
+                            <label for="openTime">Opening Time</label>
+                            <select name="openTime" class="custom-select" id="openTime"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="closeTime">Closing Time</label>
+                            <select name="closeTime" class="custom-select" id="closeTime"></select>
+                        </div>
+                        <div class="form-group">
                             <label for="clubImg">Upload Logo</label>
                             <input type="file" class="form-control-file" id="clubImg">
-                          </div>
+                        </div>
                     </form>
                 </div>
             </div>

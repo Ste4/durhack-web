@@ -2,6 +2,15 @@ $(document).ready(function(){
 
     let conf = false;
 
+    let times = [20, 21, 22, 23, 0, 1, 2, 3, 4];
+
+    for (var i in times){
+        for(j=0; j<4; j++){
+            $("#openTime").append($('<option></option>').val(times[i] + j/4).html(times[i] + j/4));
+            $("#closeTime").append($('<option></option>').val(times[i] + j/4).html(times[i] + j/4));
+        }
+    }
+
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),
             sURLVariables = sPageURL.split('&'),
@@ -16,8 +25,6 @@ $(document).ready(function(){
             }
         }
     };
-
-
 
     let club = getUrlParameter('club');
 
@@ -34,10 +41,9 @@ $(document).ready(function(){
 
     $("#price").on("keypress keyup blur", function (event) {
         $(this).val($(this).val().replace(/[^0-9\.]/g,''));
-            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
-                event.preventDefault();
-            }
-        });
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+            event.preventDefault();
+        }
     });
 
     $("#capacity").on("keypress keyup blur", function (event) {

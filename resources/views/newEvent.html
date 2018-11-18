@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Nite Life</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="eventsScripts.js"></script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-header"><h2>Select a Venue</h2></div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input class="form-control" id="eventName" type="text" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <div class='form-row' id='date'>
+                                <div class='col'>
+                                    <select name="day" class="custom-select" id="day"></select>
+                                </div>
+                                <div class='col'>
+                                    <select name="month" class="custom-select" id="month"></select>
+                                </div>
+                                <div class='col'>
+                                    <select name="year" class="custom-select" id="year"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="openTime">Opening Time</label>
+                            <select name="openTime" class="custom-select" id="openTime"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="closeTime">Closing Time</label>
+                            <select name="closeTime" class="custom-select" id="closeTime"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Ticket Price</label>
+                            <input class="form-control" id="price" type="text" placeholder="Enter Ticket Price", maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="chargeTime">Start Charging Time</label>
+                            <select name="chargeTime" class="custom-select" id="chargeTime"></select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+    function numberToTime(num){
+        let frac = num % 1;
+        let min = (60 * frac);
+        let hr = (num - frac);
+        if (min < 10){
+            min = '0' + min;
+        }
+        if (hr < 10){
+            hr = '0' + hr;
+        }
+        return hr + ':' + min;
+    }
+
     let times = [20, 21, 22, 23, 0, 1, 2, 3, 4];
     var i;
     for (i=1;i<=31;i++){
@@ -16,9 +29,9 @@ $(document).ready(function(){
 
     for (i in times){
         for(j=0; j<4; j++){
-            $("#openTime").append($('<option></option>').val(times[i] + j/4).html(times[i] + j/4));
-            $("#closeTime").append($('<option></option>').val(times[i] + j/4).html(times[i] + j/4));
-            $("#chargeTime").append($('<option></option>').val(times[i] + j/4).html(times[i] + j/4));
+            $("#openTime").append($('<option></option>').val(times[i] + j/4).html(numberToTime(times[i] + j/4)));
+            $("#closeTime").append($('<option></option>').val(times[i] + j/4).html(numberToTime(times[i] + j/4)));
+            $("#chargeTime").append($('<option></option>').val(times[i] + j/4).html(numberToTime(times[i] + j/4)));
         }
     }
 

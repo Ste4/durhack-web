@@ -18,7 +18,11 @@
     <!--</ion-segment-button>-->
   <!--</ion-segment>-->
 
-  <div id="map_canvas"></div>
+  <div [innerHTML]="imgSrc | keepHtml"></div>
+
+  <!--<img [src]="imgSrc"/>-->
+
+  <!--<div id="map_canvas"></div>-->
 
   <ion-card class="clubcard" color="dark" *ngIf="selectedClub">
 

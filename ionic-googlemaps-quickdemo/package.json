@@ -1,5 +1,5 @@
 {
-  "name": "GoogleMaps-quick-demo",
+  "name": "NiteLife",
   "version": "0.0.1",
   "author": "Masashi Katsumata",
   "homepage": "https://github.com/mapsplugin",
@@ -21,6 +21,7 @@
     "@angular/http": "4.4.4",
     "@angular/platform-browser": "4.4.4",
     "@angular/platform-browser-dynamic": "4.4.4",
+    "@ctrl/tinycolor": "^2.2.1",
     "@ionic-native/core": "4.14.0",
     "@ionic-native/google-maps": "4.14.0",
     "@ionic-native/splash-screen": "4.14.0",

@@ -11,11 +11,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { GoogleMaps } from "@ionic-native/google-maps";
 import { ClubProvider } from '../providers/club/club';
 import { HttpModule } from "@angular/http";
+import { KeepHtmlPipe } from "../pipes/keep-html/keep-html";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    KeepHtmlPipe
   ],
   imports: [
     BrowserModule,
